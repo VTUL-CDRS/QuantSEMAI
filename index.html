@@ -1,0 +1,381 @@
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+<style type="text/css">
+	body {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		font-weight: 300;
+		font-size: 18px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 1100px;
+	}
+
+	h1 {
+		font-size: 32px;
+		font-weight: 300;
+	}
+
+	.disclaimerbox {
+		background-color: #eee;
+		border: 1px solid #eeeeee;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		padding: 20px;
+	}
+
+	video.header-vid {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+	}
+
+	img.header-img {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+	}
+
+	img.rounded {
+		border: 1px solid #eeeeee;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+	}
+
+	a:link,
+	a:visited {
+		color: #1367a7;
+		text-decoration: none;
+	}
+
+	a:hover {
+		color: #208799;
+	}
+
+	td.dl-link {
+		height: 160px;
+		text-align: center;
+		font-size: 22px;
+	}
+
+	.layered-paper-big {
+		/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+			0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The top layer shadow */
+			5px 5px 0 0px #fff,
+			/* The second layer */
+			5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The second layer shadow */
+			10px 10px 0 0px #fff,
+			/* The third layer */
+			10px 10px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The third layer shadow */
+			15px 15px 0 0px #fff,
+			/* The fourth layer */
+			15px 15px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The fourth layer shadow */
+			20px 20px 0 0px #fff,
+			/* The fifth layer */
+			20px 20px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The fifth layer shadow */
+			25px 25px 0 0px #fff,
+			/* The fifth layer */
+			25px 25px 1px 1px rgba(0, 0, 0, 0.35);
+		/* The fifth layer shadow */
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+	.paper-big {
+		/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+			0px 0px 1px 1px rgba(0, 0, 0, 0.35);
+		/* The top layer shadow */
+
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+
+	.layered-paper {
+		/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+			0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The top layer shadow */
+			5px 5px 0 0px #fff,
+			/* The second layer */
+			5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The second layer shadow */
+			10px 10px 0 0px #fff,
+			/* The third layer */
+			10px 10px 1px 1px rgba(0, 0, 0, 0.35);
+		/* The third layer shadow */
+		margin-top: 5px;
+		margin-left: 10px;
+		margin-right: 30px;
+		margin-bottom: 5px;
+	}
+
+	.vert-cent {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	hr {
+		border: 0;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+</style>
+
+<html>
+
+<head>
+	<title>Behind Density Lines</title>
+	<meta property="og:image" content="Path to my teaser.png" />
+	<!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
+	<meta property="og:title" content="Creative and Descriptive Paper Title." />
+	<meta property="og:description" content="Paper description." />
+
+	<!-- Get from Google Analytics -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src=""></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-75863369-6');
+	</script>
+</head>
+
+<body>
+	<br>
+	<center>
+		<span style="font-size:36px">Behind Density Lines: Machine Learning and Citizen Scientists in
+			Quantifying Scanning Electron Microscopy Images<br /><br /></span>
+
+		<table align=center width=600px>
+			<table align=center width=600px>
+				<tr>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px"><a href="https://beam.vt.edu/people/faculty/roberts.html">Monét
+									Roberts</a><span style="vertical-align: super; font-size: 14px;">1</span></span>
+						</center>
+					</td>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px"><a href="https://www.yinlinchen.com/">Yinlin Chen</a><span
+									style="vertical-align: super; font-size: 14px;">2</span></span>
+						</center>
+					</td>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px"><a
+									href="https://icat.vt.edu/about/tanner-upthegrove.html">Tanner Upthegrove</a><span
+									style="vertical-align: super; font-size: 14px;">3</span></span>
+						</center>
+					</td>
+				</tr>
+			</table>
+			<br />
+
+			<span style="vertical-align: super; font-size: smaller;">1</span>Department of Biomedical Engineering and
+			Mechanics, <span style="vertical-align: super; font-size: smaller;">2</span>University Libraries, <span
+				style="vertical-align: super; font-size: smaller;">3</span>Institute for Creativity, Arts,
+			and Technology<br /> Virginia Tech, Blacksburg, VA, USA
+			<!-- <table align=center width=250px>
+				<tr>
+					<td align=center width=120px>
+						<center>
+							<span style="font-size:24px"><a href=''>[Paper]</a></span>
+						</center>
+					</td>
+					<td align=center width=120px>
+						<center>
+							<span style="font-size:24px"><a href='https://github.com/richzhang/webpage-template'>[GitHub]</a></span><br>
+						</center>
+					</td>
+				</tr>
+			</table> -->
+		</table>
+	</center>
+
+	<br /><br />
+
+	<!-- <center>
+		<table align=center width=850px>
+			<tr>
+				<td width=260px>
+					<center>
+						<img class="round" style="width:500px" src="./resources/teaser.png"/>
+					</center>
+				</td>
+			</tr>
+		</table>
+
+	</center> -->
+
+	<hr>
+
+	<table align=center width=600px>
+		<!-- <center>
+			<h1>Project Abstract</h1>
+		</center> -->
+		<tr>
+			<td>
+				Amid the pandemic, screen interactions have surged by 60-80%, accentuating digital eye strain, attention
+				deficits, and posture issues. This study addresses a key challenge in image analysis post-acquisition,
+				especially in scanning electron microscopy (SEM) critical for health and material sciences applications.
+				For instance, surface morphologies in cancer research and fiber quantification in biomaterials demand
+				precise analysis, often hindered by time constraints and human error. This project proposes a machine
+				learning workflow to accurately quantify SEM images, leveraging previously quantified SEM images to
+				create a high-quality training dataset. Concurrently, a community engagement pipeline is devised to
+				involve citizen scientists in SEM analysis, beginning with a pilot
+				study and extending to interactive sessions at the Virginia Tech Science Festival. This dual approach
+				aims to bolster SEM analysis accuracy and foster a reciprocal educational ecosystem, setting a strong
+				foundation for future machine learning applications and community-driven scientific explorations.
+			</td>
+		</tr>
+	</table>
+	<br>
+
+	<center>
+
+		<table border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td><img src="images/image1.png" width="150" alt="Image 1 Alt Text"></td>
+				<td>&nbsp;&nbsp;</td>
+				<td><img src="images/image2.png" width="150" alt="Image 2 Alt Text"></td>
+				<td>&nbsp;&nbsp;</td>
+				<td><img src="images/image3.png" width="160" alt="Image 2 Alt Text"></td>
+			</tr>
+		</table>
+
+	</center>
+	<br>
+	<hr>
+
+
+	<table align="center" width="600px">
+		<tr>
+			<td colspan="2">
+				<center>
+					<h2>Virginia Tech Science Festival</h2>
+				</center>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<center>
+					<h3>Behind Density Lines: An Embodied Scanning Electron Microscopy Game</h3>
+				</center>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<center>Scanning Electron Microscopes can show us what is happening on an incredibly small scale!
+					Scientists are still learning how to use Machine Learning and other new technologies to identify and
+					quantify what is in these images. This exhibit empowers anyone to be a scientist by playing a
+					drawing game to quantify membrane protrusions on Mucin-1 overexpressing non-tumorigenic breast
+					cells. Versions of the game will be available on tablets, as well embodied by your movements in the
+					Cube.
+				</center>
+				<br /><br />
+			</td>
+		</tr>
+
+
+		<tr>
+			<td ><center><a href=""><img class="layered-paper-big" style="height:120px" src="images/image.png" /></center></a></td>
+			<td>
+				<span style="font-size:12pt">
+					Saturday, November 11, 2023<br>
+					10 AM - 3 PM<br>
+					Moss Arts Center<br>
+					<b>Free and open to the public</b><br>
+					<span style="font-size:4pt"><a href=""><br></a></span>
+				</span>
+			</td>
+
+		</tr>
+
+	</table>
+	<br /><br />
+	<table align="center" width="600px" style="border-collapse: collapse;">
+		<thead>
+			<tr>
+				<th colspan="2" style="text-align:center;  padding: 10px;">
+					CS4624: AI & Citizen Science in SEM Analysis
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td colspan="2" style="text-align:center; padding: 10px;">
+					<strong>Student Team Members:</strong>
+				</td>
+			</tr>
+			<tr>
+				<td style="text-align:center;padding: 5px;">Anthony Nguyen</td>
+				<td style="text-align:center;padding: 5px;">John Siegel</td>
+			</tr>
+			<tr>
+				<td style="text-align:center;padding: 5px;">Alex Lin</td>
+				<td style="text-align:center;padding: 5px;">Luke DiGiovanna</td>
+			</tr>
+			<tr>
+				<td style="text-align:center;padding: 5px;">
+					<a href=''>GitHub</a>
+				</td>
+				<td style="text-align:center;padding: 5px;">
+					<a href=''>Demo</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+
+	<br>
+	<hr>
+	<!-- <table align=center width=450px>
+		<center><h1>Paper and Supplementary Material</h1></center>
+		<tr>
+			<td><a href=""><img class="layered-paper-big" style="height:175px" src="./resources/paper.png"/></a></td>
+			<td><span style="font-size:14pt">F. Author, S. Author, T. Author.<br>
+				<b>Creative and Descriptive Paper Title.</b><br>
+				In Conference, 20XX.<br>
+				(hosted on <a href="">ArXiv</a>)<br>
+				<span style="font-size:4pt"><a href=""><br></a>
+				</span>
+			</td>
+		</tr>
+	</table> -->
+	<!-- <br>
+
+	<table align=center width=600px>
+		<tr>
+			<td><span style="font-size:14pt"><center>
+				<a href="./resources/bibtex.txt">[Bibtex]</a>
+			</center></td>
+		</tr>
+	</table>
+
+	<hr>
+	<br> -->
+
+
+	<br>
+</body>
+
+</html>
